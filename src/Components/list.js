@@ -3,7 +3,7 @@ import ListDetail from './listDetail';
 
 
 class List extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             listings: [{
@@ -16,24 +16,28 @@ class List extends Component {
                 location: 'Oakland',
                 price: '$200.00',
                 contact: '510-123-4567'
-            },{
+            }, {
                 description: 'This is a business in San Jose',
                 location: 'San Jose',
                 price: '$300.00',
                 contact: '510-999-9999'
+            }, {
+                description: 'This is a business in San Mateo',
+                location: 'San Mateo',
+                price: '$400.00',
+                contact: '510-111-1111'
             }]
-
         }
     }
-    render(){
-        return(
+    render() {
+        return (
             <div>
-                <ListDetail info={this.state}/>
+                <ListDetail info={this.state} />
             </div>
 
         )
     }
-    
+
 }
 
 

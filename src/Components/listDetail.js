@@ -1,31 +1,50 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import  { fetchListing } from '../Actions'
 
 class ListDetail extends Component {
-    render(){
-        return(
+
+    // receives API data before page is rendered
+    componentWillMount(){
+        this.props.fetchListing();
+    }
+    render() {
+        console.log(this.props.listing)
+        return (
             <div>
-                <h3>Listing Title</h3>
-                <br/>
-                {this.renderBooks()}
+                <h3>Businesses for Sale</h3>
+                <button onClick={()=> this.fetchListing()}>Update State</button>
+                <br />
             </div>
         )
     }
-    renderBooks(){
-        return(
-            this.props.info.listings.map(function(data){
+    fetchListing(){
+        this.props.fetchListing();
+    }
+    renderBooks() {
+        return (
+            this.props.info.listings.map((data) => {
                 return (
-                    <div key={data.location}>
+                    <div className="list-item"key={data.location}>
                         <p>{data.description}</p>
-                        <li>{data.location}</li>
-                        <li>{data.price}</li>
-                        <li>{data.contact}</li>
-                        <br/>
+                        <div>{data.location}</div>
+                        <div>{data.price}</div>
+                        <div>{data.contact}</div>
+                        <button className="btn btn-primary btn-sm">More Info</button>
+                        <br /><br /><br />
                     </div>
                 )
-             })
+            })
         )
     }
 }
 
-export default ListDetail;
+function mapStateToProps({listing}){
+    return { listing }
+};
+
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({fetchListing}, dispatch);
+}
+export default connect(mapStateToProps,mapDispatchToProps)(ListDetail);
