@@ -5,8 +5,8 @@ export default function(state = [], action){
         case FETCH_LISTING:
         console.log('Action received', action);
         return [action.payload.data, ...state];
-        default:
-        console.log('defaulted error message');
+        // default:
+        // console.log('defaulted message from reducer_listing');
     }
     return state;
 }
