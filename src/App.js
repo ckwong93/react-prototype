@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Test from './Components/test';
-import Click from './Components/click';
 import List from './Components/list';
 import './App.css';
 

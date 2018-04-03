@@ -16,6 +16,11 @@ class List extends Component {
                 location: 'Oakland',
                 price: '$200.00',
                 contact: '510-123-4567'
+            },{
+                description: 'This is a business in San Jose',
+                location: 'San Jose',
+                price: '$300.00',
+                contact: '510-999-9999'
             }]
 
         }

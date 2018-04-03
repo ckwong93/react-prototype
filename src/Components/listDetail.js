@@ -15,7 +15,7 @@ class ListDetail extends Component {
         return(
             this.props.info.listings.map(function(data){
                 return (
-                    <div>
+                    <div key={data.location}>
                         <p>{data.description}</p>
                         <li>{data.location}</li>
                         <li>{data.price}</li>
@@ -23,7 +23,6 @@ class ListDetail extends Component {
                         <br/>
                     </div>
                 )
-                console.log(data.location, data.price);
              })
         )
     }
