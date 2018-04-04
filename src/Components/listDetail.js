@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import  { fetchListing } from '../Actions'
-import { Grid, Col, Row, Button, Well } from "react-bootstrap";
+import { Col, Row, Button, Well } from "react-bootstrap";
 
 class ListDetail extends Component {
 
@@ -47,20 +47,6 @@ class ListDetail extends Component {
                 )
             })
         )
-        // return (
-        //     listing[0].map(function(data){
-        //         return (
-        //             <div className="list-item" key={data.id}>
-        //                 <p>{data.description}</p>
-        //                 <div>{data.location}</div>
-        //                 <div>{data.price}</div>
-        //                 <div>{data.contact}</div>
-        //                 <button className="btn btn-primary btn-sm">More Info</button>
-        //                 <br /><br /><br />
-        //             </div>
-        //         )
-        //     })
-        // )
     } 
 
 
