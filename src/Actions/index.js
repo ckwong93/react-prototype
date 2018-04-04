@@ -7,6 +7,7 @@ export const FETCH_LISTING = 'FETCH_LISTING';
 
 export function fetchListing(){
     const request = axios.get(API_DATA);
+    // console.log('request from actions index.js',request)
     return {
         type: FETCH_LISTING,
         payload: request

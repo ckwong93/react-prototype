@@ -23,50 +23,51 @@ class ListDetail extends Component {
     }
 
     // render listings using redux props
-    // renderListings(listing) {
-    //     if(!this.props.listing){
-    //         return(
-    //             <div>not loaded</div>
-    //         )
-    //     }
+    renderListings(listing) {
+        if(!listing[0]){
+            return(
+                <div></div>
+            )
+        }
 
-    //     console.log('listing',listing[0]);
-
-        // return (
-        //     this.props.listing.map(function(data){
-        //         console.log(data)
-        //         return (
-        //             <div className="list-item"key={data[0].location}>
-        //                 <p>{data.description}</p>
-        //                 <div>{data[0].location}</div>
-        //                 <div>{data[0].price}</div>
-        //                 <div>{data[0].contact}</div>
-        //                 <button className="btn btn-primary btn-sm">More Info</button>
-        //                 <br /><br /><br />
-        //             </div>
-        //         )
-        //     })
-        // )
-    // } 
+        console.log("this is the listing", listing);        
+        console.log('this is the listing[0]',listing[0]);
+    
+            return (
+                listing[0].map(function(data){
+                    console.log(data.description)
+                    return (
+                        <div className="list-item" key={data.location}>
+                            <p>{data.description}</p>
+                            <div>{data.location}</div>
+                            <div>{data.price}</div>
+                            <div>{data.contact}</div>
+                            <button className="btn btn-primary btn-sm">More Info</button>
+                            <br /><br /><br />
+                        </div>
+                    )
+                })
+            )
+    } 
 
 
     // render listings using passed props from list.js
-    renderListings() {
-        return (
-            this.props.info.listings.map((data) => {
-                return (
-                    <div key={data.id}>
-                        <p>{data.description}</p>
-                        <li>{data.location}</li>
-                        <li>{data.price}</li>
-                        <li>{data.contact}</li>
-                        <button className="btn btn-primary btn-sm">More Info</button>
-                        <br /><br /><br />
-                    </div>
-                )
-            })
-        )
-    }
+    // renderListings() {
+    //     return (
+    //         this.props.info.listings.map((data) => {
+    //             return (
+    //                 <div key={data.id}>
+    //                     <p>{data.description}</p>
+    //                     <li>{data.location}</li>
+    //                     <li>{data.price}</li>
+    //                     <li>{data.contact}</li>
+    //                     <button className="btn btn-primary btn-sm">More Info</button>
+    //                     <br /><br /><br />
+    //                 </div>
+    //             )
+    //         })
+        // )
+    // }
 }
 
 function mapStateToProps({listing}){
