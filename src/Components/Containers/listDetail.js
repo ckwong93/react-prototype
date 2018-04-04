@@ -20,9 +20,6 @@ class ListDetail extends Component {
             </div>
         )
     }
-    fetchListing(){
-        this.props.fetchListing();
-    }
 
     // render listings using redux props
     renderListings(listing) {
