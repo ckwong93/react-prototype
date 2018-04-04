@@ -16,18 +16,19 @@
 }
 
 .img-container{
-    flex-grow: 1;
+    /* flex-grow: 1; */
     padding-right: 20px;
 }
 
 .data-container{
-    flex-grow:5;
+    /* flex-grow:5; */
 
 }
 
 .biz-title{
     margin-top: 0px;
     margin-bottom: 5px;
+    font-size: 2em;
     color: #0c6cc4;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -51,7 +52,7 @@
     text-align: left;
     color: #707070;
     padding-top: 20px;
-    font-size: 16px;
+    font-size: 1.1em;
     /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
 }
 

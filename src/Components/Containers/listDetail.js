@@ -5,7 +5,6 @@ import { bindActionCreators } from 'redux';
 import  { fetchListing } from '../../Actions'
 
 
-
 class ListDetail extends Component {
 
     // receives API data before page is rendered
