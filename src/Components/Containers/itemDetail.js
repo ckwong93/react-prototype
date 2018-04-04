@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import  { fetchItem } from '../../Actions';
-
+import '../../style/itemDetail.css';
 
 class ItemDetail extends Component{
     
@@ -33,13 +33,14 @@ class ItemDetail extends Component{
         data.map(function(info){
             return(
                 <div>
-                    <div>
-                        <h1>{info.name}</h1>
-                        <p>{info.shortDescription}</p>
+                    <div key={info.franchiseId}>
+                        <h1 className="detail-franchise-name">{info.name}</h1>
+                        <p className="detail-franchise-sdesc">{info.shortDescription}</p>
                         <p>{info.address}, {info.city}, {info.stateId}, {info.zip}</p>
-                        <p>Minimum Liquid Capital: <b>${convertNum(info.minCapitalMin)}</b></p>
-                        <p>Total Investment Range <b>${convertNum(info.totalInvestmentMin)}</b> - <b>${convertNum(info.totalInvestmentMax)}</b></p>
+                        <p className="detail-franchise-financial">Minimum Liquid Capital: <b>${convertNum(info.minCapitalMin)}</b></p>
+                        <p className="detail-franchise-financial">Total Investment Range <b>${convertNum(info.totalInvestmentMin)}</b> - <b>${convertNum(info.totalInvestmentMax)}</b></p>
                     </div>
+                    {/* placeholder for data */}
                     <div key={info.franchseId}>
                         <h3>Sample Data</h3>
                         <p>franchiseId: {info.franchiseId}</p>
