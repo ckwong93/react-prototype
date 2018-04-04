@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import '../../style/listDetail.css';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import  { fetchListing } from '../Actions'
-import { Grid, Col, Row, Button, Well } from "react-bootstrap";
+import  { fetchListing } from '../../Actions'
+
 
 class ListDetail extends Component {
 
@@ -13,14 +14,11 @@ class ListDetail extends Component {
     render() {
         return (
             <div>
-                <h3>Businesses for Sale</h3>
+                <h1>Businesses for Sale</h1>
                 {this.renderListings(this.props.listing)}
                 <br />
             </div>
         )
-    }
-    fetchListing(){
-        this.props.fetchListing();
     }
 
     // render listings using redux props
@@ -30,37 +28,30 @@ class ListDetail extends Component {
                 <div></div>
             )
         }
+
         return (
             listing[0].map(function(data){
                 return (
-                    <Well key={data.id}>
-                            <Row>
-                                <Col xs={12}>
-                                <p>{data.description}</p>
-                                <div>{data.location}</div>
-                                <div>{data.price}</div>
-                                <div>{data.contact}</div>
-                                <Button bsStyle="primary">More Info</Button>
-                                </Col>
-                            </Row>
-                    </Well>
+                    <div className="flex-container" key={data.id}>
+                        <div className="img-container">
+                            <img className="biz-img" src={data.img} alt={data.title}/>
+                        </div>
+                        <div className="data-container">
+                            <h2 className="biz-title">{data.title}</h2>
+                            <div className="biz-details">
+                                {/* <span>{data.headline}</span> */}
+                                <span className="biz-price">{data.price}</span>
+                                <span className="biz-location">{data.location}</span>
+                                <span className="biz-contact">{data.contact}</span> 
+                            </div>
+                            <div className="biz-description">{data.description}</div>
+                            <div className="biz-capital">Minimum Capital Required: <span className="biz-capital-num">{data.capitalRequired}</span></div>
+                            {/* <button className="btn btn-info biz-button" type="button">More Info</button> */}
+                        </div>
+                    </div>
                 )
             })
         )
-        // return (
-        //     listing[0].map(function(data){
-        //         return (
-        //             <div className="list-item" key={data.id}>
-        //                 <p>{data.description}</p>
-        //                 <div>{data.location}</div>
-        //                 <div>{data.price}</div>
-        //                 <div>{data.contact}</div>
-        //                 <button className="btn btn-primary btn-sm">More Info</button>
-        //                 <br /><br /><br />
-        //             </div>
-        //         )
-        //     })
-        // )
     } 
 
 
