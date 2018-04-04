@@ -32,6 +32,9 @@ class ListDetail extends Component {
                 <div></div>
             )
         }
+        function truncateDescription(description){
+            let data = [];
+        }
         return (
             listing[0].map(function(data){
                 return (
@@ -48,6 +51,7 @@ class ListDetail extends Component {
                                 <span className="biz-contact">{data.contact}</span> 
                             </div>
                             <div className="biz-description">{data.description}</div>
+                            <div className="biz-capital">Minimum Capital Required: <span className="biz-capital-num">{data.capitalRequired}</span></div>
                             {/* <button className="btn btn-info biz-button" type="button">More Info</button> */}
                         </div>
                     </div>
