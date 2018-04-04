@@ -1,0 +1,58 @@
+.flex-container{
+    align-content: space-between;
+    display: flex;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    padding: 15px;
+    border-bottom: 1px solid lightgray;
+}
+
+.biz-img{
+    height: 250px;
+    width: 300px;
+    float: left;
+}
+
+.img-container{
+    flex-grow: 1;
+    padding-right: 20px;
+}
+
+.data-container{
+    flex-grow:5;
+
+}
+
+.biz-title{
+    margin-top: 0px;
+    margin-bottom: 5px;
+    color: #0c6cc4;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.biz-location, .biz-price, .biz-contact{
+    color: #c16a10;
+    text-align: left;
+    margin-left: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;    
+}
+
+.biz-details{
+    margin-bottom: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;    
+    font-weight: 500;  
+    margin-top: 10px;  
+}
+
+.biz-description{
+    text-align: left;
+    color: #707070;
+    padding-top: 20px;
+    font-size: 17px;
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+}
+
+.biz-button{
+    align-items: baseline;
+}
