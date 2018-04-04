@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import List from './Components/list';
+import ListDetail from './Components/Containers/listDetail';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <List />
+        <ListDetail />
       </div>
     );
   }

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import '../style/listDetail.css';
+import '../../style/listDetail.css';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import  { fetchListing } from '../Actions'
+import  { fetchListing } from '../../Actions'
 
 
 
