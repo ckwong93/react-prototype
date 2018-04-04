@@ -4,6 +4,8 @@ import { bindActionCreators } from 'redux';
 import  { fetchListing } from '../Actions'
 import { Col, Row, Button, Well } from "react-bootstrap";
 
+
+
 class ListDetail extends Component {
 
     // receives API data before page is rendered
@@ -36,6 +38,8 @@ class ListDetail extends Component {
                     <Well key={data.id}>
                             <Row>
                                 <Col xs={12}>
+                                <h3>{data.title}</h3>
+                                <img src={data.img}/>
                                 <p>{data.description}</p>
                                 <div>{data.location}</div>
                                 <div>{data.price}</div>
