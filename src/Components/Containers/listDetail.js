@@ -32,15 +32,13 @@ class ListDetail extends Component {
                 <div></div>
             )
         }
-        function truncateDescription(description){
-            let data = [];
-        }
+
         return (
             listing[0].map(function(data){
                 return (
                     <div className="flex-container" key={data.id}>
                         <div className="img-container">
-                            <img className="biz-img" src={data.img}/>
+                            <img className="biz-img" src={data.img} alt={data.title}/>
                         </div>
                         <div className="data-container">
                             <h2 className="biz-title">{data.title}</h2>
