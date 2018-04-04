@@ -30,24 +30,20 @@ class ListDetail extends Component {
             )
         }
 
-        console.log("this is the listing", listing);        
-        console.log('this is the listing[0]',listing[0]);
-    
-            return (
-                listing[0].map(function(data){
-                    console.log(data.description)
-                    return (
-                        <div className="list-item" key={data.location}>
-                            <p>{data.description}</p>
-                            <div>{data.location}</div>
-                            <div>{data.price}</div>
-                            <div>{data.contact}</div>
-                            <button className="btn btn-primary btn-sm">More Info</button>
-                            <br /><br /><br />
-                        </div>
-                    )
-                })
-            )
+        return (
+            listing[0].map(function(data){
+                return (
+                    <div className="list-item" key={data.id}>
+                        <p>{data.description}</p>
+                        <div>{data.location}</div>
+                        <div>{data.price}</div>
+                        <div>{data.contact}</div>
+                        <button className="btn btn-primary btn-sm">More Info</button>
+                        <br /><br /><br />
+                    </div>
+                )
+            })
+        )
     } 
 
 
