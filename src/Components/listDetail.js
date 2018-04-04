@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import  { fetchListing } from '../Actions'
+import { Grid, Col, Row, Button, Well } from "react-bootstrap";
 
 class ListDetail extends Component {
 
@@ -29,21 +30,37 @@ class ListDetail extends Component {
                 <div></div>
             )
         }
-
         return (
             listing[0].map(function(data){
                 return (
-                    <div className="list-item" key={data.id}>
-                        <p>{data.description}</p>
-                        <div>{data.location}</div>
-                        <div>{data.price}</div>
-                        <div>{data.contact}</div>
-                        <button className="btn btn-primary btn-sm">More Info</button>
-                        <br /><br /><br />
-                    </div>
+                    <Well key={data.id}>
+                            <Row>
+                                <Col xs={12}>
+                                <p>{data.description}</p>
+                                <div>{data.location}</div>
+                                <div>{data.price}</div>
+                                <div>{data.contact}</div>
+                                <Button bsStyle="primary">More Info</Button>
+                                </Col>
+                            </Row>
+                    </Well>
                 )
             })
         )
+        // return (
+        //     listing[0].map(function(data){
+        //         return (
+        //             <div className="list-item" key={data.id}>
+        //                 <p>{data.description}</p>
+        //                 <div>{data.location}</div>
+        //                 <div>{data.price}</div>
+        //                 <div>{data.contact}</div>
+        //                 <button className="btn btn-primary btn-sm">More Info</button>
+        //                 <br /><br /><br />
+        //             </div>
+        //         )
+        //     })
+        // )
     } 
 
 
