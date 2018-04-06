@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import  { fetchItem } from '../../Actions';
+import { Link } from "react-router-dom";
 import '../../style/itemDetail.css';
 
 class ItemDetail extends Component{
@@ -41,7 +42,7 @@ class ItemDetail extends Component{
                         <p className="detail-franchise-financial">Total Investment Range <b>${convertNum(info.totalInvestmentMin)}</b> - <b>${convertNum(info.totalInvestmentMax)}</b></p>
                     </div>
                     {/* placeholder for data */}
-                    <div key={info.franchseId}>
+                    {/* <div key={info.franchseId}>
                         <h3>Sample Data</h3>
                         <p>franchiseId: {info.franchiseId}</p>
                         <p>name: {info.name}</p>
@@ -67,7 +68,7 @@ class ItemDetail extends Component{
                         <p>generalDescription: {info.generalDescription}</p>
                         <p>createdDate: {info.createdDate}</p>                    
                         <p>display_image: {info.display_image}</p>
-                    </div>
+                    </div> */}
                 </div>
             )
         })
