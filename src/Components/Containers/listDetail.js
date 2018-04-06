@@ -3,6 +3,7 @@ import '../../style/listDetail.css';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import  { fetchListing } from '../../Actions'
+import { Link } from "react-router-dom";
 
 
 class ListDetail extends Component {
@@ -37,7 +38,8 @@ class ListDetail extends Component {
                             <img className="biz-img" src={data.img} alt={data.title}/>
                         </div>
                         <div className="data-container">
-                            <h2 className="biz-title">{data.title}</h2>
+
+                            <h2 className="biz-title"><Link to={`/franchise/${data.id}`} activeClassName="active"> {data.title}</Link></h2>
                             <div className="biz-details">
                                 {/* <span>{data.headline}</span> */}
                                 <span className="biz-price">{data.price}</span>
